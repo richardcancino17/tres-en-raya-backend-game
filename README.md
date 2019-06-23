@@ -4,7 +4,7 @@ A project made in Python using the framework Django 2.0.8
 TRES EN RAYA - CHATY
 
 Es un juego típico y común en muchos lugares del mundo.
-Para jugar al tres en raya necesitarás un tablero de 3x3 cómo el que se muestra en lafotografía. El juego trata de ir marcando los espacios del tablero alternadamente hasta queuno de los jugadores consiga hacer tres en raya.
+Para jugar al tres en raya necesitarás un tablero de 3x3. El juego trata de ir marcando los espacios del tablero alternadamente hasta que uno de los jugadores consiga hacer tres en raya.
 
 Lenguaje: Python 3.6
 Framework: Django 2.0
