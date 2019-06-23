@@ -3,6 +3,12 @@ from apps.account.models import Player
 from rest_framework import serializers
 
 
+class CreateGamesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ('player_2',)
+
+
 class ListGamesSerializer(serializers.ModelSerializer):
     players = serializers.SerializerMethodField()
 
@@ -29,11 +35,11 @@ class GetGameSerializer(serializers.ModelSerializer):
 class MovesInGameSerializer(serializers.Serializer):
     def validate_number(value):
         if value < 0 or value > 8:
-            raise serializers.ValidationError({'details': [{
+            raise serializers.ValidationError({
                 'object': 'Error',
                 'message': 'Incorrect position',
                 'code': 'G00-002'
-            }]})
+            })
 
     player = serializers.PrimaryKeyRelatedField(queryset=Player.objects.all(),
                                                 required=True)

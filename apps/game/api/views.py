@@ -3,9 +3,26 @@ from apps.game.models import Game
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from apps.game.api.serializers import ListGamesSerializer, GetGameSerializer, \
-    MovesInGameSerializer
+    MovesInGameSerializer, CreateGamesSerializer
 from apps.game.functions import see_status_game
 from rest_framework.generics import get_object_or_404
+
+
+class CreateGameAPIView(generics.CreateAPIView):
+    serializer_class = CreateGamesSerializer
+    permission_classes = IsAuthenticated,
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data,
+                                         context={"request": request})
+        serializer.is_valid(raise_exception=True)
+        game = serializer.save(player_1=self.request.user)
+        return Response({'details': [{
+            'object': 'Successful',
+            'message': 'Game created!',
+            'game_id': game.id,
+            'code': 'G00-007'
+        }]}, status=status.HTTP_200_OK)
 
 
 class ListGamesAPIView(generics.ListAPIView):

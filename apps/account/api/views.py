@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from rest_framework import generics, status, filters
+from rest_framework import generics, status
 from django.utils.decorators import method_decorator
 from rest_framework.permissions import AllowAny
 from social.apps.django_app.utils import psa

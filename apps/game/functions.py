@@ -35,7 +35,7 @@ def see_status_game(game):
             if check_get_player_winner(game, number_player_1, number_player_2):
                 finish = True
                 return finish
-        if position != -1 and (number_player_1 + number_player_2) > 8 :
+        if position != -1 and (number_player_1 + number_player_2) > 7 :
             # TODO: Recommend to make with Celery (tasks asynchronous)
             check_get_player_winner(game, number_player_1, number_player_2)
             finish = True

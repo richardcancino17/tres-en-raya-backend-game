@@ -4,7 +4,8 @@ from apps.game.models import Game
 
 
 class GameTestCase(TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpTestData(cls):
         Player.objects.create(email='prueba_1_test@gmail.com',
                               username='pruebatest1')
         Player.objects.create(email='prueba_2_test@gmail.com',
@@ -12,9 +13,10 @@ class GameTestCase(TestCase):
         Game.objects.create(player_1_id=1, player_2_id=2)
 
     def test_players_can_play(self):
-        """Animals that can speak are correctly identified"""
-        lion = Animal.objects.get(name="lion")
-        cat = Animal.objects.get(name="cat")
         game = Game.objects.get(id=1)
-        self.assertEqual(lion.speak(), 'The lion says "roar"')
-        self.assertEqual(cat.speak(), 'The cat says "meow"')
+        player1 = Player.objects.get(id=1)
+        player2 = Player.objects.get(id=2)
+        self.assertEqual(player1.play(), 'The player1 play first')
+        self.assertEqual(player2.play(), 'The player1 play second')
+
+        # TODO = Finish all the 'assertEquals' in UnitTest
