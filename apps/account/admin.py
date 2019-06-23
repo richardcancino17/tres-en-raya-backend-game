@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import *
 from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import Group
+from social_django.models import *
+from rest_framework.authtoken.admin import Token
 
 
 class PlayerAdmin(UserAdmin):
@@ -24,3 +27,8 @@ class PlayerAdmin(UserAdmin):
 
 
 admin.site.register(Player, PlayerAdmin)
+admin.site.unregister(Association)
+admin.site.unregister(Nonce)
+admin.site.unregister(UserSocialAuth)
+admin.site.unregister(Group)
+admin.site.unregister(Token)
