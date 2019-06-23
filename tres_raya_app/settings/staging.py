@@ -1,6 +1,6 @@
 from .base import *
 
-ALLOWED_HOSTS = ['178.128.9.218','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['178.128.9.218', '127.0.0.1', 'localhost']
 DEBUG = False
 DATABASES = {
     'default': {
@@ -15,4 +15,3 @@ DATABASES = {
 
 STATIC_URL = '/static/'
 APPSECRET_PROOF = False
-
