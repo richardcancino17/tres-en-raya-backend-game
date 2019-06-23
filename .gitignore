@@ -1,0 +1,8 @@
+.idea/*
+__pycache__
+.idea
+.media/*
+.pyc
+media
+tres_raya_app/settings/local.py
+fabfile.py
