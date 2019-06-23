@@ -17,6 +17,14 @@ class CreateGameAPIView(generics.CreateAPIView):
                                          context={"request": request})
         serializer.is_valid(raise_exception=True)
         game = serializer.save(player_1=self.request.user)
+
+        if serializer.validated_data.get('player_2') == self.request.user:
+            return Response({'details': [{
+                'object': 'Error',
+                'message': 'You can not invite yourself',
+                'code': 'G00-010'
+            }]}, status=status.HTTP_400_BAD_REQUEST)
+
         return Response({'details': [{
             'object': 'Successful',
             'message': 'Game created!',
@@ -91,4 +99,4 @@ class MovesInGameAPIView(generics.GenericAPIView):
                 'object': 'Error',
                 'message': 'The position {} have been used'.format(position),
                 'code': 'G00-004'
-            }]}, status=status.HTTP_404_NOT_FOUND)
+            }]}, status=status.HTTP_400_BAD_REQUEST)
