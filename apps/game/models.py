@@ -30,13 +30,3 @@ class Game(models.Model):
     class Meta:
         verbose_name = "Game"
         verbose_name_plural = "Games"
-
-
-class Move(models.Model):
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateField(auto_now_add=True)
-    update_at = models.DateField(auto_now=True)
-
-    class Meta:
-        verbose_name = "Move"
-        verbose_name_plural = "Moves"

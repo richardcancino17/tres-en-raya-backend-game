@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from rest_framework import generics, status, filters
+from rest_framework import generics, status
 from apps.game.models import Game
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from apps.game.api.serializers import ListGamesSerializer, GetGameSerializer, \
     MovesInGameSerializer

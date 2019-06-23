@@ -1,15 +1,8 @@
-from django.contrib.auth import authenticate, login
-from requests.exceptions import HTTPError
+from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from apps.account.models import Player
-from django.contrib.auth.tokens import default_token_generator
-from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail.message import EmailMessage
 from requests.exceptions import HTTPError
-from django.template import loader
-from django.conf import settings
 from rest_framework import serializers
-from social.exceptions import AuthCanceled
 
 
 class CreateUserSerializer(serializers.ModelSerializer):

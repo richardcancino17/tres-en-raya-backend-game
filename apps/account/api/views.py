@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from rest_framework import generics, status, filters
 from django.utils.decorators import method_decorator
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny
 from social.apps.django_app.utils import psa
 from rest_framework.response import Response
 from .serializers import *
-from rest_framework.generics import get_object_or_404
-from rest_framework.pagination import PageNumberPagination
 
 
 class LoginAPIView(generics.GenericAPIView):
