@@ -1,18 +1,13 @@
-# tres-en-raya-chaty-job
+# tres-en-raya
 A project made in Python using the framework Django 2.0.8
 
-TRES EN RAYA - CHATY
+TRES EN RAYA 
 
 Es un juego típico y común en muchos lugares del mundo.
 Para jugar al tres en raya necesitarás un tablero de 3x3. El juego trata de ir marcando los espacios del tablero alternadamente hasta que uno de los jugadores consiga hacer tres en raya.
 
 Lenguaje: Python 3.6
 Framework: Django 2.0
-
-DOCUMENTACIÓN: http://178.128.9.218:85/docs/
-ADMINISTRADOR: http://178.128.9.218:85/admin/
-CREDENCIALES ==> email: richard@gmail.com / password: 992424558richard
-
 
 ¿Cómo jugar? - Listado de Endpoints
 
